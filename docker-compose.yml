@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    image: retired-cell-grouping-api:latest
+    container_name: retired-cell-grouping-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - battery-data:/data
+    restart: unless-stopped
+
+volumes:
+  battery-data:
